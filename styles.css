@@ -755,3 +755,30 @@ footer p {
     transform: none !important;
   }
 }
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between logo and text */
+  height: 80px; /* control overall size */
+}
+
+.logo-img {
+  height: 40%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #333;
+}
