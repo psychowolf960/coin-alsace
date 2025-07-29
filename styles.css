@@ -4,28 +4,28 @@
 
 /* CSS Custom Properties (Color Variables) */
 :root {
-  /* Primary Colors */
-  --primary-gold: #dab028;
-  --primary-gold-light: #d4b142;
-  --primary-gold-dark: #bf9720;
+  /* Primary Colors - Tons bois/marron */
+  --primary-wood: #8B5A3C;
+  --primary-wood-light: #A0704C;
+  --primary-wood-dark: #6B3E20;
   
-  /* Secondary Colors */
-  --secondary-blue: #2c4f7c;
-  --secondary-blue-light: #4a6b94;
-  --secondary-blue-dark: #1e3654;
+  /* Secondary Colors - Tons marron chauds */
+  --secondary-brown: #5D4E37;
+  --secondary-brown-light: #7A6A47;
+  --secondary-brown-dark: #3E2F1F;
   
   /* Neutral Colors */
   --white: #ffffff;
-  --light-gray: #f8f9fa;
-  --medium-gray: #6c757d;
-  --dark-gray: #343a40;
-  --text-primary: #2c3e50;
-  --text-secondary: #4a4a4a;
+  --light-gray: #f5f2ee;
+  --medium-gray: #8B7355;
+  --dark-gray: #4A3F32;
+  --text-primary: #3E2F1F;
+  --text-secondary: #5D4E37;
   
-  /* Background Colors */
+  /* Background Colors - Tons chauds */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-accent: #fef8e7;
+  --bg-secondary: #f5f2ee;
+  --bg-accent: #f0ebe4;
   
   /* Shadow & Effects */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -143,7 +143,7 @@ ul {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-gold), var(--primary-gold-light));
+  background: linear-gradient(90deg, var(--primary-wood), var(--primary-wood-light));
   border-radius: var(--radius-sm);
 }
 
@@ -182,7 +182,7 @@ nav {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-xl);
   font-weight: 700;
-  color: var(--primary-gold);
+  color: var(--primary-wood);
 }
 
 .logo img {
@@ -215,7 +215,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--primary-gold);
+  color: var(--primary-wood);
   background-color: var(--bg-accent);
 }
 
@@ -227,7 +227,7 @@ nav {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: var(--primary-gold);
+  background: var(--primary-wood);
   transition: var(--transition-normal);
 }
 
@@ -310,7 +310,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+  background: linear-gradient(135deg, var(--primary-wood), var(--primary-wood-light));
   color: var(--white);
   padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius-xl);
@@ -438,6 +438,112 @@ nav {
 
 .product-card:hover::before {
   transform: scaleX(1);
+}
+
+/* ====================================
+   Christmas Market Section
+   ================================== */
+
+.christmas-market {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fef8e7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.christmas-market::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23dab028" opacity="0.1"/><circle cx="80" cy="80" r="1.5" fill="%232c4f7c" opacity="0.1"/><circle cx="60" cy="30" r="1" fill="%23dab028" opacity="0.1"/></svg>') repeat;
+  pointer-events: none;
+}
+
+.christmas-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.christmas-text h3 {
+  color: var(--secondary-blue-dark);
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.christmas-text h3 i {
+  color: var(--primary-wood);
+  font-size: 1.8rem;
+}
+
+.christmas-text p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.christmas-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.christmas-items li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.christmas-items li i {
+  color: var(--primary-gold);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.christmas-image {
+  text-align: center;
+}
+
+.christmas-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s ease;
+}
+
+.christmas-image img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .christmas-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .christmas-image {
+    order: -1;
+  }
+  
+  .christmas-image img {
+    height: 250px;
+  }
 }
 
 /* ====================================
@@ -599,21 +705,80 @@ nav {
    ================================== */
 
 footer {
-  background: linear-gradient(135deg, var(--secondary-blue-dark), var(--secondary-blue));
+  background: linear-gradient(135deg, var(--secondary-brown-dark), var(--secondary-brown));
   color: var(--white);
   padding: var(--space-xl) 0;
-  text-align: center;
 }
 
-footer p {
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.footer-main {
+  text-align: left;
+}
+
+.footer-main p {
   margin-bottom: var(--space-xs);
   opacity: 0.9;
 }
 
+.footer-links {
+  text-align: left;
+}
+
+.footer-links h4 {
+  color: var(--primary-wood-light);
+  font-family: var(--font-family-primary);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: var(--transition-normal);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--primary-wood-light);
+  text-decoration: underline;
+}
+
 .footer-accent {
-  color: var(--primary-gold);
+  color: var(--primary-wood-light);
   font-weight: 600;
   font-family: var(--font-family-primary);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+  
+  .footer-main,
+  .footer-links {
+    text-align: center;
+  }
 }
 
 /* ====================================
