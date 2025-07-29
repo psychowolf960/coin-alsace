@@ -1,15 +1,12 @@
 /* ====================================
-   Le Coin d'Alsace - Modern CSS
+   Artal Souvenirs - Optimized CSS
    ================================== */
 
-/* CSS Custom Properties (Color Variables) */
 :root {
-  /* Primary Colors - Tons bois/marron */
+  /* Color Palette */
   --primary-wood: #8B5A3C;
   --primary-wood-light: #A0704C;
   --primary-wood-dark: #6B3E20;
-  
-  /* Secondary Colors - Tons marron chauds */
   --secondary-brown: #5D4E37;
   --secondary-brown-light: #7A6A47;
   --secondary-brown-dark: #3E2F1F;
@@ -21,13 +18,14 @@
   --dark-gray: #4A3F32;
   --text-primary: #3E2F1F;
   --text-secondary: #5D4E37;
+  --text-muted: #4a4a4a;
   
-  /* Background Colors - Tons chauds */
+  /* Backgrounds */
   --bg-primary: #ffffff;
   --bg-secondary: #f5f2ee;
   --bg-accent: #eee2d1;
   
-  /* Shadow & Effects */
+  /* Effects */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -65,10 +63,7 @@
   --transition-slow: 0.5s ease;
 }
 
-/* ====================================
-   Global Styles & Reset
-   ================================== */
-
+/* Global Styles & Reset */
 * {
   margin: 0;
   padding: 0;
@@ -104,10 +99,7 @@ ul {
   list-style: none;
 }
 
-/* ====================================
-   Utility Classes
-   ================================== */
-
+/* Utility Classes */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -147,10 +139,7 @@ ul {
   border-radius: var(--radius-sm);
 }
 
-/* ====================================
-   Header & Navigation
-   ================================== */
-
+/* Header & Navigation */
 header {
   position: fixed;
   top: 0;
@@ -263,10 +252,7 @@ nav {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ====================================
-   Hero Section
-   ================================== */
-
+/* Hero Section */
 .hero {
   padding: calc(80px + var(--space-xl)) 0 var(--space-2xl) 0;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-accent) 100%);
@@ -367,10 +353,7 @@ nav {
   transform: rotate(0deg) scale(1.02);
 }
 
-/* ====================================
-   Products Section
-   ================================== */
-
+/* Products Section */
 .products {
   padding: var(--space-2xl) 0;
   background: var(--bg-secondary);
@@ -440,10 +423,7 @@ nav {
   transform: scaleX(1);
 }
 
-/* ====================================
-   Christmas Market Section
-   ================================== */
-
+/* Christmas Market Section */
 .christmas-market {
   padding: var(--space-2xl) 0;
   background: linear-gradient(135deg, #fff3d3 0%, #f8f9fa 100%);
@@ -598,10 +578,7 @@ nav {
   }
 }
 
-/* ====================================
-   Info Section
-   ================================== */
-
+/* Info Section */
 .info {
   padding: var(--space-2xl) 0;
   background: var(--white);
@@ -716,10 +693,7 @@ nav {
   color: var(--primary-gold-dark);
 }
 
-/* ====================================
-   Map Section
-   ================================== */
-
+/* Map Section */
 .map-section {
   height: 400px;
   position: relative;
@@ -752,10 +726,7 @@ nav {
   filter: grayscale(0%);
 }
 
-/* ====================================
-   Footer
-   ================================== */
-
+/* Footer */
 footer {
   background: linear-gradient(135deg, var(--secondary-brown-dark), var(--secondary-brown));
   color: var(--white);
@@ -880,10 +851,31 @@ footer {
   }
 }
 
-/* ====================================
-   Responsive Design
-   ================================== */
+/* Contact styling */
+.phone-link {
+  color: var(--primary-wood);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
 
+.phone-link:hover {
+  color: var(--primary-wood-light);
+}
+
+.email-text {
+  color: var(--text-muted);
+}
+
+.contact-description {
+  margin-top: 1.5rem;
+}
+
+.contact-description span {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -1014,26 +1006,11 @@ footer {
   }
 }
 
-/* ====================================
-   Print Styles
-   ================================== */
-
+/* Print Styles */
 @media print {
-  .mobile-menu,
-  .map-section,
-  .cta-button {
-    display: none !important;
-  }
-  
-  .hero {
-    padding: var(--space-lg) 0;
-    min-height: auto;
-  }
-  
-  .fade-in {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  .mobile-menu, .map-section, .cta-button { display: none !important; }
+  .hero { padding: var(--space-lg) 0; min-height: auto; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
 }
 .logo-wrapper {
   display: flex;
