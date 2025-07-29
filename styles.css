@@ -25,7 +25,7 @@
   /* Background Colors - Tons chauds */
   --bg-primary: #ffffff;
   --bg-secondary: #f5f2ee;
-  --bg-accent: #f0ebe4;
+  --bg-accent: #eee2d1;
   
   /* Shadow & Effects */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -359,7 +359,7 @@ nav {
   width: 100%;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
-  transform: rotate(2deg);
+  transform: rotate(1deg);
   transition: var(--transition-slow);
 }
 
@@ -446,7 +446,7 @@ nav {
 
 .christmas-market {
   padding: var(--space-2xl) 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #fef8e7 100%);
+  background: linear-gradient(135deg, #fff3d3 0%, #f8f9fa 100%);
   position: relative;
   overflow: hidden;
 }
@@ -820,6 +820,49 @@ footer {
   font-family: var(--font-family-primary);
 }
 
+.payment-methods {
+  margin-top: var(--space-lg);
+}
+
+.payment-methods h5 {
+  color: var(--primary-wood-light);
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+}
+
+.payment-icons {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.payment-icons a {
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition-normal);
+}
+
+.payment-icons a:hover {
+  transform: scale(1.05);
+}
+
+.payment-icons i {
+  font-size: 1.8rem;
+  color: var(--white);
+  opacity: 0.8;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.payment-icons a:hover i,
+.payment-icons i:hover {
+  opacity: 1;
+  color: var(--primary-wood-light);
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
@@ -830,6 +873,10 @@ footer {
   .footer-main,
   .footer-links {
     text-align: center;
+  }
+  
+  .payment-icons {
+    justify-content: center;
   }
 }
 
